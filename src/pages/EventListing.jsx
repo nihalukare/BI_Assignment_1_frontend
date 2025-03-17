@@ -55,7 +55,7 @@ const EventListing = ({ searchInput }) => {
                   <Link to={`/${event._id}`}>
                     <img
                       src={event.imageUrl}
-                      className="card-img"
+                      className="card-img img-fluid"
                       alt={`meeting-listing-${index + 1}`}
                     />{" "}
                   </Link>
