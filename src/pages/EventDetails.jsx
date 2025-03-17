@@ -11,7 +11,7 @@ const EventDetails = () => {
   const { data, loading, error } = useFetch(
     `https://bi-assignment-1-backend-gamma.vercel.app/events/${params.eventId}`
   );
-  console.log(data);
+  // console.log(data);
 
   return (
     <>
