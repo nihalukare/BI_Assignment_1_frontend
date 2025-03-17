@@ -6,12 +6,10 @@ import useFetch from "../useFetch";
 
 const EventDetails = () => {
   const params = useParams();
-  console.log(params.eventId);
 
   const { data, loading, error } = useFetch(
     `https://bi-assignment-1-backend-gamma.vercel.app/events/${params.eventId}`
   );
-  // console.log(data);
 
   return (
     <>
@@ -46,8 +44,11 @@ const EventDetails = () => {
                 </p>
                 <h3>Event Tags:</h3>
                 <div className="d-flex">
-                  {data.eventTags.map((eventTags) => (
-                    <p className="text-bg-danger rounded py-2 px-3 me-4">
+                  {data.eventTags.map((eventTags, index) => (
+                    <p
+                      key={index}
+                      className="text-bg-danger rounded py-2 px-3 me-4"
+                    >
                       {eventTags}
                     </p>
                   ))}
@@ -84,8 +85,8 @@ const EventDetails = () => {
                 </div>
                 <h3 className="mt-5">Speakers: ({data.speakers.length})</h3>
                 <div className="row mt-3">
-                  {data.speakers.map((speaker) => (
-                    <div className="col-md-6">
+                  {data.speakers.map((speaker, index) => (
+                    <div key={index} className="col-md-6">
                       <div className="card border-0 rounded shadow-sm h-100">
                         <div className="card-body text-center">
                           <img
