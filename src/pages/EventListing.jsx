@@ -4,7 +4,9 @@ import { useState } from "react";
 
 const EventListing = ({ searchInput }) => {
   const [eventType, setEventType] = useState("Both");
-  const { data, loading, error } = useFetch("http://localhost:3000/events");
+  const { data, loading, error } = useFetch(
+    "https://bi-assignment-1-backend-gamma.vercel.app/events"
+  );
 
   let filteredEvents = [];
   if (data) {
