@@ -19,8 +19,12 @@ const EventListing = ({ searchInput }) => {
     }
 
     if (searchInput.trim() !== "") {
-      filteredEvents = filteredEvents.filter((event) =>
-        event.title.toLowerCase().includes(searchInput.toLowerCase())
+      filteredEvents = filteredEvents.filter(
+        (event) =>
+          event.title.toLowerCase().includes(searchInput.toLowerCase()) ||
+          event.eventTags.some((eventTag) =>
+            eventTag.toLowerCase().includes(searchInput.toLowerCase())
+          )
       );
     }
   }
